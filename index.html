@@ -3,36 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+    <title>Landing Page </title>
 </head>
 <body>
     <header>
         <nav>
+            <a href="index.html" class="logo nav-link"><img src="/assets/img/logos/logo.png" alt=""></a>
             <ul>
                 <li><a href="#welcome">INICIO</a></li>
-                <li><a href="#about">CONOCENOS</a></li>
+                <li><a href="#about">CONÓCENOS</a></li>
                 <li><a href="#products">PRODUCTOS</a></li>
                 <li><a href="#contact">CONTACTO</a></li>
             </ul>
         </nav>
+        <div class="menu-bars" id="toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
     <section id="welcome">
-        <h1>Bienvenidos 
-            Somos los distribuidores de productos y plantas naturales
-        </h1>
+        <div class="welcome-content">
+            <h1>Bienvenidos</h1>
+            <br>
+            <h1>Somos los distribuidores de productos y plantas naturales</h1>
+        </div>
     </section>
 
     <section id="about">
-        <h2>¿Qué hacemos?</h2>
-        <p>Nosotros trabajamos y extraemos
-            los cultivos para traerte 
-            los mejores productos en medicina vegetal
-        </p>
-        <ul>
-            <li><img src="" alt="" srcset=""></li>
-            <li><img src="" alt="" srcset=""></li>
-        </ul>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>¿Qué hacemos?</h2>
+                <p>Nosotros trabajamos y extraemos
+                los cultivos para traerte 
+                los mejores productos en medicina vegetal
+                </p>
+            </div>            
+            <div class="about-images">
+                <img src="./assets/img/plants.png" alt="Imagen 1" class="image1">
+                <img src="./assets/img/lab.webp" alt="Imagen 2"  class="image2">
+                <img src="./assets/img/tee.jpg" alt="Imagen 3"  class="image3">
+            </div>
+        </div>        
     </section>
     <section id="products">
         <h2>Nuestros Productos</h2>
@@ -79,5 +97,6 @@
             <a href="#">Sabuchajlatam</a>
         </div>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>

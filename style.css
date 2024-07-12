@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #F4F4F4;
+    color: #333;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo img {
+    max-height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    font-family: "Source Serif 4", serif;
+    color: #333;
+    text-decoration: none;
+}
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+#welcome {
+    font-family: "Merriweather", serif;
+    position: relative;
+    height: 100vh;
+    color: #333;
+    background: url('./assets/img/Mountain.png') no-repeat center center/cover;
+}
+
+
+.welcome-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-20%, -20%);
+    color: #333;
+    text-align: right;
+}
+
+.welcome-content h1 {
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+#about {
+    font-family: "Merriweather", serif;
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    overflow: hidden;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./assets/img/banner-1.png') no-repeat center center/cover;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+}
+
+.about-text {
+    flex: 1 1 40%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+}
+.about-images {
+    flex: 1 1 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.about-images img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#features, #testimonials, #contact {
+    background-color: #e0e0e0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+footer .social-links a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.menu-bars{
+    display:none;
+    flex-direction: column;
+    height:20px;
+    justify-content: space-between;
+    position:relative;
+    z-index:999;
+}
+.menu-bars input{
+    position: absolute;
+    width:40px;
+    height:28px;
+    left:-5px;
+    top:-3px;
+    opacity: 0;
+    cursor:pointer;
+    z-index: 2;
+}
+    
+.menu-bars span{
+    display:block;
+    width:28px;
+    height:3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+    
+.menu-bars span:nth-child(2){
+    transform-origin: 0 0 ;
+}
+    
+.menu-bars span:nth-child(4){
+    transform-origin: 0 100% ;
+}
+    
+.menu-bars input:checked ~ span:nth-child(2){
+    background-color: #333;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-bars input:checked ~ span:nth-child(4){
+    background-color: #333;
+    transform: rotate(-45deg) translate(-1px,0); 
+}
+    
+.menu-bars input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+    #welcome h1 {
+        font-size: 2rem;
+    }
+    .menu-bars{
+        display:flex;
+    }
+    nav ul li a{
+        width:50%;
+    }
+    #about {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .about-text, .about-images {
+        flex: 1 1 100%;
+    }
+
+    .about-images {
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    section {
+        padding: 4rem;
+    }
+    .welcome-content h1 {
+        font-size: 1rem;
+        margin: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    section {
+        padding: 6rem;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .menu-bars{
+        display:flex;
+    }
+    nav ul li a{
+        position:absolute;
+        right:0;
+        top:0;
+        width:100%;
+        height:100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        transform: translateY(-100%);
+        transition: all 1s;
+    }
+    
+    nav ul li.slide{
+        transform: translateY(0);
+    }
+}
