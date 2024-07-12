@@ -8,8 +8,12 @@ body {
 
 header {
     background-color: #F4F4F4;
+    width: 100%;
     color: #333;
     padding: 1rem;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -110,7 +114,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1000px;
 }
 
 .about-text {
